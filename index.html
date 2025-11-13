@@ -15,13 +15,13 @@
 
 
     :root {
-        --primary: #0066CC;
-        --secondary: #00A3E0;
-        --accent: #004C99;
-        --light: #E6F3FF;
+        --primary: #1D4FA2;
+        --secondary: #0D3A7A;
+        --accent: #2B5CB8;
+        --yellow: #F9CA25;
+        --light: #E8F0FF;
         --dark: #1A1A1A;
         --white: #FFFFFF;
-        --gold: #FFD700;
     }
 
     body {
@@ -33,13 +33,13 @@
 
     /* Navigation */
     nav {
-        background: rgba(0, 102, 204, 0.95);
+        background: rgba(29, 79, 162, 0.95);
         backdrop-filter: blur(10px);
         padding: 1rem 0;
         position: sticky;
         top: 0;
         z-index: 1000;
-        box-shadow: 0 4px 20px rgba(0, 102, 204, 0.3);
+        box-shadow: 0 4px 20px rgba(29, 79, 162, 0.3);
         animation: slideDown 0.8s ease-out;
     }
 
@@ -101,7 +101,7 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: var(--gold);
+        background: var(--yellow);
         transition: width 0.3s;
     }
 
@@ -110,7 +110,7 @@
     }
 
     .nav-links a:hover {
-        color: var(--gold);
+        color: var(--yellow);
     }
 
     .menu-toggle {
@@ -125,7 +125,7 @@
     /* Hero Section */
     .hero {
         min-height: 100vh;
-        background: linear-gradient(135deg, #0066CC 0%, #004C99 30%, #00A3E0 70%, #0080FF 100%);
+        background: linear-gradient(135deg, #1D4FA2 0%, #0D3A7A 50%, #2B5CB8 100%);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -158,8 +158,8 @@
         right: 0;
         bottom: 0;
         background: 
-            radial-gradient(circle at 20% 50%, rgba(0, 163, 224, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(0, 102, 204, 0.3) 0%, transparent 50%);
+            radial-gradient(circle at 20% 50%, rgba(249, 202, 37, 0.2) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(29, 79, 162, 0.3) 0%, transparent 50%);
         animation: pulse 8s ease-in-out infinite;
     }
 
@@ -213,7 +213,7 @@
     .hero-slogan {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
-        color: var(--gold);
+        color: var(--yellow);
         animation: fadeInUp 1.2s ease-out 0.4s backwards;
         font-style: italic;
         font-weight: 300;
@@ -233,15 +233,15 @@
     .cta-button {
         display: inline-block;
         padding: 1.3rem 3.5rem;
-        background: linear-gradient(135deg, #00A3E0 0%, #0066CC 100%);
-        color: var(--white);
+        background: linear-gradient(135deg, var(--yellow) 0%, #F0B800 100%);
+        color: var(--dark);
         text-decoration: none;
         border-radius: 50px;
         font-weight: 700;
         font-size: 1.3rem;
         transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
         animation: fadeInUp 1.2s ease-out 1s backwards;
-        box-shadow: 0 10px 30px rgba(0, 163, 224, 0.4);
+        box-shadow: 0 10px 30px rgba(249, 202, 37, 0.4);
         position: relative;
         overflow: hidden;
         letter-spacing: 1px;
@@ -256,7 +256,7 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
         transition: left 0.5s;
     }
 
@@ -266,7 +266,7 @@
 
     .cta-button:hover {
         transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 15px 40px rgba(0, 163, 224, 0.6);
+        box-shadow: 0 15px 40px rgba(249, 202, 37, 0.6);
     }
 
     @keyframes fadeInUp {
@@ -278,6 +278,109 @@
             opacity: 1;
             transform: translateY(0);
         }
+    }
+
+    /* Gallery Showcase Section */
+    .gallery-showcase {
+        padding: 6rem 2rem;
+        background: linear-gradient(180deg, var(--light) 0%, var(--white) 100%);
+        overflow: hidden;
+    }
+
+    .gallery-showcase h2 {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+        letter-spacing: 1px;
+    }
+
+    .gallery-showcase-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 4rem;
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .gallery-item {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(29, 79, 162, 0.15);
+        transition: all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+        animation: fadeInGallery 1s ease-out backwards;
+    }
+
+    .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+    .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+    .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+    .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+    .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+    .gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+    @keyframes fadeInGallery {
+        from {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 20px 60px rgba(29, 79, 162, 0.25);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.1);
+    }
+
+    .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(29, 79, 162, 0.9) 0%, transparent 100%);
+        padding: 2rem;
+        transform: translateY(100%);
+        transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+        transform: translateY(0);
+    }
+
+    .gallery-overlay h3 {
+        color: var(--white);
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .gallery-overlay p {
+        color: var(--yellow);
+        font-size: 0.9rem;
     }
 
     /* Sections */
@@ -320,7 +423,7 @@
         transform: translateX(-50%);
         width: 100px;
         height: 4px;
-        background: linear-gradient(90deg, var(--secondary), var(--primary));
+        background: linear-gradient(90deg, var(--yellow), var(--primary));
         border-radius: 2px;
     }
 
@@ -346,7 +449,7 @@
         background: var(--white);
         border-radius: 20px;
         padding: 2.5rem;
-        box-shadow: 0 10px 40px rgba(0, 102, 204, 0.1);
+        box-shadow: 0 10px 40px rgba(29, 79, 162, 0.1);
         transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
         border: 2px solid var(--light);
         position: relative;
@@ -360,7 +463,7 @@
         left: 0;
         width: 100%;
         height: 5px;
-        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        background: linear-gradient(90deg, var(--primary), var(--yellow));
         transform: scaleX(0);
         transition: transform 0.5s;
     }
@@ -371,8 +474,8 @@
 
     .kit-card:hover {
         transform: translateY(-15px) scale(1.02);
-        box-shadow: 0 20px 60px rgba(0, 102, 204, 0.2);
-        border-color: var(--secondary);
+        box-shadow: 0 20px 60px rgba(29, 79, 162, 0.2);
+        border-color: var(--yellow);
     }
 
     .kit-card h3 {
@@ -385,10 +488,11 @@
 
     .kit-price {
         font-size: 2.5rem;
-        color: var(--secondary);
+        color: var(--yellow);
         font-weight: 800;
         margin: 1.5rem 0;
         font-family: 'Playfair Display', serif;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
 
     .kit-description {
@@ -422,7 +526,7 @@
         left: 50%;
         width: 0;
         height: 0;
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(249, 202, 37, 0.3);
         border-radius: 50%;
         transform: translate(-50%, -50%);
         transition: width 0.6s, height 0.6s;
@@ -435,7 +539,7 @@
 
     .purchase-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
+        box-shadow: 0 10px 25px rgba(29, 79, 162, 0.3);
     }
 
     /* Payment Options */
@@ -452,13 +556,14 @@
         padding: 2rem;
         border-radius: 15px;
         border-left: 5px solid var(--primary);
-        box-shadow: 0 5px 20px rgba(0, 102, 204, 0.1);
+        box-shadow: 0 5px 20px rgba(29, 79, 162, 0.1);
         transition: all 0.3s;
     }
 
     .payment-card:hover {
         transform: translateX(10px);
-        box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2);
+        box-shadow: 0 10px 30px rgba(29, 79, 162, 0.2);
+        border-left-color: var(--yellow);
     }
 
     .payment-card h3 {
@@ -487,7 +592,7 @@
         padding: 3rem;
         border-radius: 20px;
         text-align: center;
-        box-shadow: 0 10px 30px rgba(0, 102, 204, 0.1);
+        box-shadow: 0 10px 30px rgba(29, 79, 162, 0.1);
         transition: all 0.4s;
         position: relative;
         overflow: hidden;
@@ -500,7 +605,7 @@
         left: -50%;
         width: 200%;
         height: 200%;
-        background: radial-gradient(circle, rgba(0, 163, 224, 0.1) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(249, 202, 37, 0.1) 0%, transparent 70%);
         transition: transform 0.8s;
     }
 
@@ -510,7 +615,7 @@
 
     .about-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(0, 102, 204, 0.2);
+        box-shadow: 0 15px 40px rgba(29, 79, 162, 0.2);
     }
 
     .about-card h3 {
@@ -545,13 +650,13 @@
         display: flex;
         align-items: center;
         gap: 1.5rem;
-        box-shadow: 0 5px 20px rgba(0, 102, 204, 0.1);
+        box-shadow: 0 5px 20px rgba(29, 79, 162, 0.1);
         transition: all 0.3s;
     }
 
     .contact-item:hover {
         transform: scale(1.03);
-        box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2);
+        box-shadow: 0 10px 30px rgba(29, 79, 162, 0.2);
     }
 
     .contact-icon {
@@ -563,7 +668,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+        box-shadow: 0 5px 15px rgba(29, 79, 162, 0.3);
     }
 
     /* Coming Soon */
@@ -642,7 +747,7 @@
 
     /* Footer */
     footer {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
         color: var(--white);
         text-align: center;
         padding: 3rem 2rem;
@@ -709,7 +814,7 @@
         right: 1.5rem;
         font-size: 2rem;
         cursor: pointer;
-        color: var(--accent);
+        color: var(--secondary);
         transition: all 0.3s;
         font-weight: 300;
         line-height: 1;
@@ -733,7 +838,7 @@
             top: 100%;
             left: 0;
             right: 0;
-            background: rgba(0, 102, 204, 0.98);
+            background: rgba(29, 79, 162, 0.98);
             backdrop-filter: blur(10px);
             flex-direction: column;
             padding: 2rem;
@@ -778,6 +883,14 @@
         .modal-content {
             padding: 2rem;
         }
+
+        .gallery-item img {
+            height: 250px;
+        }
+
+        .gallery-showcase h2 {
+            font-size: 2.3rem;
+        }
     }
 </style>
 
@@ -809,6 +922,56 @@
         <p class="hero-slogan">Charity, Fitness & Fun — A Happy Ramadhan for All</p>
         <p class="hero-date">📅 MARCH 2026 | JOIN US FOR A NOBLE CAUSE</p>
         <button class="cta-button" onclick="showSection('kits')">PURCHASE KIT</button>
+    </div>
+</section>
+
+<!-- Gallery Showcase Section (On Homepage) -->
+<section id="home-gallery" class="gallery-showcase">
+    <h2>Event Highlights</h2>
+    <p class="gallery-showcase-subtitle">Moments from our previous charity runs</p>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?w=600" alt="Charity Run Event">
+            <div class="gallery-overlay">
+                <h3>Community Together</h3>
+                <p>United for a cause</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=600" alt="Runners at Event">
+            <div class="gallery-overlay">
+                <h3>Running for Hope</h3>
+                <p>Every step counts</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600" alt="Charity Distribution">
+            <div class="gallery-overlay">
+                <h3>Giving Back</h3>
+                <p>Feeding 1,000 families</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600" alt="Happy Participants">
+            <div class="gallery-overlay">
+                <h3>Joy & Fitness</h3>
+                <p>Healthy bodies, happy hearts</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600" alt="Ramadhan Spirit">
+            <div class="gallery-overlay">
+                <h3>Ramadhan Spirit</h3>
+                <p>Blessed month, blessed deeds</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?w=600" alt="Volunteers">
+            <div class="gallery-overlay">
+                <h3>Volunteers in Action</h3>
+                <p>Making dreams come true</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -933,7 +1096,7 @@
     <div class="modal-content">
         <button class="close-modal" onclick="closePaymentModal()">&times;</button>
         <h2 style="color: var(--primary); margin-bottom: 1rem; font-family: 'Playfair Display', serif; font-size: 2rem; margin-top: 1rem;">Payment Options</h2>
-        <p id="kitInfo" style="margin-bottom: 2rem; font-weight: 600; font-size: 1.1rem; color: var(--secondary);"></p>
+        <p id="kitInfo" style="margin-bottom: 2rem; font-weight: 600; font-size: 1.1rem; color: var(--yellow);"></p>
         <div class="payment-options">
             <div class="payment-card">
                 <h3>📱 MTN Momo Pay</h3>
@@ -969,9 +1132,10 @@
 </footer>
 
 <script>
-    // Show home section
+    // Show home section with gallery
     function showHome() {
         document.getElementById('home').style.display = 'flex';
+        document.getElementById('home-gallery').style.display = 'block';
         
         const sections = document.querySelectorAll('.content-section');
         sections.forEach(section => {
@@ -985,6 +1149,7 @@
     // Show specific content section
     function showSection(sectionId) {
         document.getElementById('home').style.display = 'none';
+        document.getElementById('home-gallery').style.display = 'none';
         
         const sections = document.querySelectorAll('.content-section');
         sections.forEach(section => {
