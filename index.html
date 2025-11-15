@@ -5,33 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramadhan Charity Run 2026 | Charity, Fitness & Fun</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
 
     :root {
         --primary: #1D4FA2;
         --secondary: #0D3A7A;
-        --accent: #2B5CB8;
         --yellow: #F9CA25;
         --light: #E8F0FF;
-        --dark: #1A1A1A;
         --white: #FFFFFF;
     }
-
+    
     body {
         font-family: 'Poppins', sans-serif;
-        line-height: 1.6;
-        color: var(--dark);
+        color: #1A1A1A;
         overflow-x: hidden;
     }
-
-    /* Navigation */
+    
     nav {
         background: rgba(29, 79, 162, 0.95);
         backdrop-filter: blur(10px);
@@ -42,18 +34,12 @@
         box-shadow: 0 4px 20px rgba(29, 79, 162, 0.3);
         animation: slideDown 0.8s ease-out;
     }
-
+    
     @keyframes slideDown {
-        from {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
+        from { transform: translateY(-100%); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
     }
-
+    
     .nav-container {
         max-width: 1200px;
         margin: 0 auto;
@@ -62,38 +48,44 @@
         justify-content: space-between;
         align-items: center;
     }
-
+    
     .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    
+    .logo img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+    
+    .logo span {
         font-size: 1.8rem;
         font-weight: 800;
-        color: var(--white);
-        text-decoration: none;
+        color: white;
         font-family: 'Playfair Display', serif;
-        letter-spacing: 1px;
-        transition: transform 0.3s;
-        cursor: pointer;
     }
-
-    .logo:hover {
-        transform: scale(1.05);
-    }
-
+    
+    .logo:hover { transform: scale(1.05); }
+    
     .nav-links {
         display: flex;
         list-style: none;
         gap: 2.5rem;
     }
-
+    
     .nav-links a {
-        color: var(--white);
+        color: white;
         text-decoration: none;
-        transition: all 0.3s;
-        font-weight: 500;
-        position: relative;
-        letter-spacing: 0.5px;
         cursor: pointer;
+        transition: all 0.3s;
+        position: relative;
     }
-
+    
     .nav-links a::after {
         content: '';
         position: absolute;
@@ -104,35 +96,30 @@
         background: var(--yellow);
         transition: width 0.3s;
     }
-
-    .nav-links a:hover::after {
-        width: 100%;
-    }
-
-    .nav-links a:hover {
-        color: var(--yellow);
-    }
-
+    
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--yellow); }
+    
     .menu-toggle {
         display: none;
         background: none;
         border: none;
-        color: var(--white);
+        color: white;
         font-size: 1.5rem;
         cursor: pointer;
     }
-
-    /* Hero Section */
+    
     .hero {
         min-height: 100vh;
         background: linear-gradient(135deg, #1D4FA2 0%, #0D3A7A 50%, #2B5CB8 100%);
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 6rem 2rem;
         position: relative;
         overflow: hidden;
     }
-
+    
     .hero::before {
         content: '';
         position: absolute;
@@ -144,12 +131,12 @@
         background-size: 50px 50px;
         animation: gridMove 20s linear infinite;
     }
-
+    
     @keyframes gridMove {
         0% { transform: translate(0, 0) rotate(0deg); }
         100% { transform: translate(50px, 50px) rotate(360deg); }
     }
-
+    
     .hero::after {
         content: '';
         position: absolute;
@@ -162,93 +149,136 @@
             radial-gradient(circle at 80% 80%, rgba(29, 79, 162, 0.3) 0%, transparent 50%);
         animation: pulse 8s ease-in-out infinite;
     }
-
+    
     @keyframes pulse {
         0%, 100% { opacity: 0.5; transform: scale(1); }
         50% { opacity: 0.8; transform: scale(1.1); }
     }
-
+    
     .hero-content {
         text-align: center;
-        color: var(--white);
+        color: white;
+        max-width: 1100px;
         z-index: 1;
-        padding: 2rem;
-        max-width: 1000px;
     }
-
-    .hero-icon {
-        font-size: 5rem;
-        margin-bottom: 1rem;
+    
+    .hero-logo {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 2rem;
         animation: float 3s ease-in-out infinite;
         filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
     }
-
+    
+    .hero-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
     @keyframes float {
         0%, 100% { transform: translateY(0px); }
         50% { transform: translateY(-20px); }
     }
-
+    
     .hero-title {
-        font-size: 4rem;
-        margin-bottom: 1rem;
-        animation: fadeInScale 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
-        text-shadow: 0 5px 30px rgba(0,0,0,0.5);
-        font-family: 'Playfair Display', serif;
+        font-size: 4.5rem;
+        font-family: 'Poppins', sans-serif;
         font-weight: 900;
-        letter-spacing: 2px;
-        line-height: 1.2;
-    }
-
-    @keyframes fadeInScale {
-        from {
-            opacity: 0;
-            transform: scale(0.8) translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-    }
-
-    .hero-slogan {
-        font-size: 1.8rem;
         margin-bottom: 1.5rem;
+        text-shadow: 0 5px 30px rgba(0,0,0,0.5);
+        letter-spacing: 3px;
+        animation: fadeInScale 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+        line-height: 1.1;
+    }
+    
+    @keyframes fadeInScale {
+        from { opacity: 0; transform: scale(0.8) translateY(30px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    
+    .hero-edition {
+        font-size: 1.2rem;
         color: var(--yellow);
+        margin-bottom: 2rem;
+        font-weight: 600;
+        letter-spacing: 2px;
         animation: fadeInUp 1.2s ease-out 0.4s backwards;
+    }
+    
+    .hero-slogan {
+        font-size: 1.5rem;
+        margin-bottom: 3.5rem;
         font-style: italic;
         font-weight: 300;
+        animation: fadeInUp 1.2s ease-out 0.7s backwards;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+        animation: fadeInUp 1.2s ease-out 1s backwards;
+    }
+    
+    .countdown-item {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 1.5rem 2rem;
+        border-radius: 15px;
+        min-width: 100px;
+        border: 2px solid rgba(249, 202, 37, 0.3);
+        transition: all 0.3s;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .countdown-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--yellow);
+        box-shadow: 0 12px 35px rgba(249, 202, 37, 0.4);
+    }
+    
+    .countdown-number {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--yellow);
         text-shadow: 0 3px 15px rgba(0,0,0,0.4);
+        line-height: 1;
+    }
+    
+    .countdown-label {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        margin-top: 0.5rem;
         letter-spacing: 1px;
     }
-
-    .hero-date {
-        font-size: 1.4rem;
-        margin-bottom: 2.5rem;
-        animation: fadeInUp 1.2s ease-out 0.7s backwards;
-        font-weight: 400;
-        letter-spacing: 2px;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-
+    
     .cta-button {
-        display: inline-block;
         padding: 1.3rem 3.5rem;
-        background: linear-gradient(135deg, var(--yellow) 0%, #F0B800 100%);
-        color: var(--dark);
-        text-decoration: none;
+        background: linear-gradient(135deg, var(--yellow), #F0B800);
+        color: #1A1A1A;
         border-radius: 50px;
         font-weight: 700;
         font-size: 1.3rem;
+        cursor: pointer;
+        border: none;
         transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-        animation: fadeInUp 1.2s ease-out 1s backwards;
         box-shadow: 0 10px 30px rgba(249, 202, 37, 0.4);
         position: relative;
         overflow: hidden;
-        letter-spacing: 1px;
-        cursor: pointer;
-        border: none;
+        animation: fadeInUp 1.2s ease-out 1.3s backwards;
     }
-
+    
     .cta-button::before {
         content: '';
         position: absolute;
@@ -259,53 +289,36 @@
         background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
         transition: left 0.5s;
     }
-
-    .cta-button:hover::before {
-        left: 100%;
-    }
-
+    
+    .cta-button:hover::before { left: 100%; }
+    
     .cta-button:hover {
         transform: translateY(-5px) scale(1.05);
         box-shadow: 0 15px 40px rgba(249, 202, 37, 0.6);
     }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Gallery Showcase Section */
+    
     .gallery-showcase {
         padding: 6rem 2rem;
-        background: linear-gradient(180deg, var(--light) 0%, var(--white) 100%);
-        overflow: hidden;
+        background: linear-gradient(180deg, var(--light) 0%, white 100%);
     }
-
+    
     .gallery-showcase h2 {
         text-align: center;
         font-size: 3rem;
-        margin-bottom: 1rem;
         color: var(--primary);
         font-family: 'Playfair Display', serif;
+        margin-bottom: 1rem;
         font-weight: 900;
-        letter-spacing: 1px;
     }
-
+    
     .gallery-showcase-subtitle {
         text-align: center;
         font-size: 1.2rem;
         color: #666;
-        margin-bottom: 4rem;
-        font-weight: 300;
+        margin-bottom: 2rem;
         font-style: italic;
     }
-
+    
     .gallery-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -313,7 +326,7 @@
         max-width: 1200px;
         margin: 0 auto;
     }
-
+    
     .gallery-item {
         position: relative;
         border-radius: 20px;
@@ -322,99 +335,113 @@
         transition: all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
         animation: fadeInGallery 1s ease-out backwards;
     }
-
+    
     .gallery-item:nth-child(1) { animation-delay: 0.1s; }
     .gallery-item:nth-child(2) { animation-delay: 0.2s; }
     .gallery-item:nth-child(3) { animation-delay: 0.3s; }
     .gallery-item:nth-child(4) { animation-delay: 0.4s; }
     .gallery-item:nth-child(5) { animation-delay: 0.5s; }
     .gallery-item:nth-child(6) { animation-delay: 0.6s; }
-
+    
     @keyframes fadeInGallery {
-        from {
-            opacity: 0;
-            transform: translateY(30px) scale(0.95);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
+        from { opacity: 0; transform: translateY(30px) scale(0.95); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
     }
-
+    
     .gallery-item:hover {
         transform: translateY(-10px) scale(1.03);
         box-shadow: 0 20px 60px rgba(29, 79, 162, 0.25);
     }
-
+    
     .gallery-item img {
         width: 100%;
         height: 350px;
         object-fit: cover;
         transition: transform 0.8s ease;
     }
-
-    .gallery-item:hover img {
-        transform: scale(1.1);
-    }
-
+    
+    .gallery-item:hover img { transform: scale(1.15); }
+    
     .gallery-overlay {
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
-        background: linear-gradient(to top, rgba(29, 79, 162, 0.9) 0%, transparent 100%);
+        background: linear-gradient(to top, rgba(29, 79, 162, 0.95) 0%, transparent 100%);
         padding: 2rem;
         transform: translateY(100%);
         transition: transform 0.4s ease;
     }
-
-    .gallery-item:hover .gallery-overlay {
-        transform: translateY(0);
-    }
-
+    
+    .gallery-item:hover .gallery-overlay { transform: translateY(0); }
+    
     .gallery-overlay h3 {
-        color: var(--white);
+        color: white;
         font-size: 1.3rem;
         margin-bottom: 0.5rem;
     }
-
-    .gallery-overlay p {
-        color: var(--yellow);
-        font-size: 0.9rem;
+    
+    .gallery-overlay p { color: var(--yellow); }
+    
+    .noble-cause-text {
+        text-align: center;
+        font-size: 1.5rem;
+        color: var(--primary);
+        margin-top: 4rem;
+        font-weight: 600;
+        animation: fadeInUp 1s ease-out;
     }
-
-    /* Sections */
+    
+    .view-full-gallery {
+        text-align: center;
+        margin-top: 3rem;
+    }
+    
+    .view-gallery-btn {
+        padding: 1rem 2.5rem;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s;
+    }
+    
+    .view-gallery-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(29, 79, 162, 0.4);
+    }
+    
     section {
         padding: 6rem 2rem;
         max-width: 1200px;
         margin: 0 auto;
     }
-
-    .content-section {
-        display: none;
-    }
-
+    
+    .content-section { display: none; }
+    
     .content-section.active {
         display: block;
         animation: fadeIn 0.5s ease-in;
     }
-
+    
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
-
+    
     .section-title {
         text-align: center;
         font-size: 3rem;
-        margin-bottom: 1rem;
         color: var(--primary);
         font-family: 'Playfair Display', serif;
+        margin-bottom: 1rem;
         font-weight: 900;
         position: relative;
-        letter-spacing: 1px;
     }
-
+    
     .section-title::after {
         content: '';
         position: absolute;
@@ -426,36 +453,33 @@
         background: linear-gradient(90deg, var(--yellow), var(--primary));
         border-radius: 2px;
     }
-
+    
     .section-subtitle {
         text-align: center;
         font-size: 1.2rem;
         color: #666;
         margin-bottom: 3rem;
         margin-top: 2rem;
-        font-weight: 300;
-        font-style: italic;
     }
-
-    /* Kit Cards */
+    
     .kit-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2.5rem;
         margin-top: 4rem;
     }
-
+    
     .kit-card {
-        background: var(--white);
+        background: white;
         border-radius: 20px;
         padding: 2.5rem;
         box-shadow: 0 10px 40px rgba(29, 79, 162, 0.1);
-        transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
         border: 2px solid var(--light);
+        transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
         position: relative;
         overflow: hidden;
     }
-
+    
     .kit-card::before {
         content: '';
         position: absolute;
@@ -467,25 +491,22 @@
         transform: scaleX(0);
         transition: transform 0.5s;
     }
-
-    .kit-card:hover::before {
-        transform: scaleX(1);
-    }
-
+    
+    .kit-card:hover::before { transform: scaleX(1); }
+    
     .kit-card:hover {
         transform: translateY(-15px) scale(1.02);
         box-shadow: 0 20px 60px rgba(29, 79, 162, 0.2);
         border-color: var(--yellow);
     }
-
+    
     .kit-card h3 {
         color: var(--primary);
-        margin-bottom: 1rem;
         font-size: 1.8rem;
+        margin-bottom: 1rem;
         font-weight: 700;
-        letter-spacing: 0.5px;
     }
-
+    
     .kit-price {
         font-size: 2.5rem;
         color: var(--yellow);
@@ -494,31 +515,28 @@
         font-family: 'Playfair Display', serif;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
-
+    
     .kit-description {
         color: #666;
         margin-bottom: 2rem;
         line-height: 1.8;
-        font-size: 0.95rem;
     }
-
+    
     .purchase-btn {
         width: 100%;
         padding: 1rem;
         background: linear-gradient(135deg, var(--primary), var(--secondary));
-        color: var(--white);
+        color: white;
         border: none;
         border-radius: 10px;
         font-weight: 700;
         cursor: pointer;
-        transition: all 0.3s;
         font-size: 1.05rem;
-        letter-spacing: 1px;
+        transition: all 0.3s;
         position: relative;
         overflow: hidden;
-        font-family: 'Poppins', sans-serif;
     }
-
+    
     .purchase-btn::before {
         content: '';
         position: absolute;
@@ -531,18 +549,17 @@
         transform: translate(-50%, -50%);
         transition: width 0.6s, height 0.6s;
     }
-
+    
     .purchase-btn:hover::before {
         width: 300px;
         height: 300px;
     }
-
+    
     .purchase-btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 10px 25px rgba(29, 79, 162, 0.3);
     }
-
-    /* Payment Options */
+    
     .payment-options {
         display: flex;
         flex-direction: column;
@@ -550,45 +567,67 @@
         max-width: 600px;
         margin: 2rem auto;
     }
-
+    
     .payment-card {
-        background: linear-gradient(135deg, var(--light) 0%, var(--white) 100%);
+        background: linear-gradient(135deg, var(--light) 0%, white 100%);
         padding: 2rem;
         border-radius: 15px;
         border-left: 5px solid var(--primary);
         box-shadow: 0 5px 20px rgba(29, 79, 162, 0.1);
         transition: all 0.3s;
     }
-
+    
     .payment-card:hover {
         transform: translateX(10px);
         box-shadow: 0 10px 30px rgba(29, 79, 162, 0.2);
         border-left-color: var(--yellow);
     }
-
+    
     .payment-card h3 {
         color: var(--primary);
         margin-bottom: 1rem;
         font-size: 1.4rem;
         font-weight: 700;
     }
-
+    
     .payment-info {
-        color: var(--dark);
-        font-weight: 400;
+        color: #1A1A1A;
         line-height: 1.8;
+        font-size: 1rem;
     }
-
-    /* About Section */
+    
+    .payment-info strong { color: var(--primary); }
+    
+    .whatsapp-notice {
+        text-align: center;
+        margin-top: 2.5rem;
+        padding: 1.5rem;
+        background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+        border-radius: 15px;
+        border-left: 5px solid #25D366;
+    }
+    
+    .whatsapp-notice p {
+        font-size: 1.1rem;
+        color: #2E7D32;
+        font-weight: 600;
+    }
+    
+    .whatsapp-notice a {
+        color: #25D366;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+    
     .about-content {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2.5rem;
         margin-top: 4rem;
     }
-
+    
     .about-card {
-        background: linear-gradient(135deg, var(--light) 0%, var(--white) 100%);
+        background: linear-gradient(135deg, var(--light) 0%, white 100%);
         padding: 3rem;
         border-radius: 20px;
         text-align: center;
@@ -597,7 +636,7 @@
         position: relative;
         overflow: hidden;
     }
-
+    
     .about-card::before {
         content: '';
         position: absolute;
@@ -608,33 +647,80 @@
         background: radial-gradient(circle, rgba(249, 202, 37, 0.1) 0%, transparent 70%);
         transition: transform 0.8s;
     }
-
-    .about-card:hover::before {
-        transform: rotate(180deg);
-    }
-
+    
+    .about-card:hover::before { transform: rotate(180deg); }
+    
     .about-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 15px 40px rgba(29, 79, 162, 0.2);
     }
-
+    
     .about-card h3 {
         color: var(--primary);
-        margin-bottom: 1.5rem;
         font-size: 1.8rem;
-        font-weight: 700;
+        margin-bottom: 1.5rem;
         position: relative;
         z-index: 1;
     }
-
+    
     .about-card p {
         line-height: 1.8;
         color: #555;
         position: relative;
         z-index: 1;
     }
-
-    /* Contact Section */
+    
+    .full-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .full-gallery-item {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(29, 79, 162, 0.12);
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        animation: fadeInGallery 0.6s ease-out backwards;
+    }
+    
+    .full-gallery-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 50px rgba(29, 79, 162, 0.25);
+    }
+    
+    .full-gallery-item img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+    
+    .full-gallery-item:hover img { transform: scale(1.1); }
+    
+    .full-gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(29, 79, 162, 0.9) 0%, rgba(29, 79, 162, 0.7) 50%, transparent 100%);
+        padding: 1.5rem;
+    }
+    
+    .full-gallery-overlay h3 {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    
+    .full-gallery-overlay p {
+        color: var(--yellow);
+        font-size: 0.9rem;
+    }
+    
     .contact-info {
         display: flex;
         flex-direction: column;
@@ -642,9 +728,9 @@
         max-width: 600px;
         margin: 2rem auto;
     }
-
+    
     .contact-item {
-        background: linear-gradient(135deg, var(--light) 0%, var(--white) 100%);
+        background: linear-gradient(135deg, var(--light) 0%, white 100%);
         padding: 2rem;
         border-radius: 15px;
         display: flex;
@@ -653,12 +739,12 @@
         box-shadow: 0 5px 20px rgba(29, 79, 162, 0.1);
         transition: all 0.3s;
     }
-
+    
     .contact-item:hover {
         transform: scale(1.03);
         box-shadow: 0 10px 30px rgba(29, 79, 162, 0.2);
     }
-
+    
     .contact-icon {
         font-size: 2rem;
         background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -670,32 +756,13 @@
         border-radius: 50%;
         box-shadow: 0 5px 15px rgba(29, 79, 162, 0.3);
     }
-
-    /* Coming Soon */
-    .coming-soon {
-        text-align: center;
-        padding: 5rem 2rem;
-    }
-
-    .coming-soon h2 {
-        font-size: 3rem;
-        color: var(--primary);
-        margin-bottom: 1rem;
-        font-family: 'Playfair Display', serif;
-    }
-
-    .coming-soon p {
-        font-size: 1.5rem;
-        color: #666;
-    }
-
-    /* WhatsApp Float Button */
+    
     .whatsapp-float {
         position: fixed;
         bottom: 30px;
         right: 30px;
         background: linear-gradient(135deg, #25D366, #128C7E);
-        color: var(--white);
+        color: white;
         width: 65px;
         height: 65px;
         border-radius: 50%;
@@ -704,62 +771,92 @@
         justify-content: center;
         font-size: 2rem;
         box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-        cursor: pointer;
-        transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
         z-index: 1000;
         text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
         animation: bounce 2s infinite;
     }
-
+    
     @keyframes bounce {
         0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
         40% { transform: translateY(-15px); }
         60% { transform: translateY(-10px); }
     }
-
+    
     .whatsapp-float:hover {
         transform: scale(1.15);
         box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
         animation: none;
     }
-
-    .whatsapp-text {
-        position: absolute;
-        right: 75px;
-        background: var(--dark);
-        color: var(--white);
-        padding: 0.7rem 1.5rem;
-        border-radius: 25px;
-        white-space: nowrap;
-        font-size: 0.9rem;
-        opacity: 0;
-        transition: opacity 0.3s, transform 0.3s;
-        transform: translateX(10px);
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        pointer-events: none;
-    }
-
-    .whatsapp-float:hover .whatsapp-text {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    /* Footer */
+    
     footer {
         background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-        color: var(--white);
+        color: white;
         text-align: center;
-        padding: 3rem 2rem;
+        padding: 4rem 2rem 2rem;
         margin-top: 5rem;
     }
-
-    footer p {
+    
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .footer-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+    
+    .footer-logo-item {
+        text-align: center;
+    }
+    
+    .footer-logo-item img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin-bottom: 0.5rem;
+        filter: brightness(0) invert(1);
+        opacity: 0.9;
+    }
+    
+    .footer-logo-item p {
+        font-size: 0.9rem;
+        font-weight: 400;
+        opacity: 0.9;
+    }
+    
+    .footer-organizers {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .footer-organizers p {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+        font-weight: 300;
+    }
+    
+    .footer-organizers strong {
+        color: var(--yellow);
+        font-weight: 600;
+    }
+    
+    .footer-bottom {
+        padding-top: 1.5rem;
+    }
+    
+    .footer-bottom p {
         font-weight: 300;
         letter-spacing: 0.5px;
+        margin: 0.3rem 0;
     }
-
-    /* Modal */
+    
     .modal {
         display: none;
         position: fixed;
@@ -773,66 +870,54 @@
         align-items: center;
         justify-content: center;
     }
-
+    
     .modal.show {
         display: flex;
         animation: fadeInModal 0.3s;
     }
-
+    
     @keyframes fadeInModal {
         from { opacity: 0; }
         to { opacity: 1; }
     }
-
+    
     .modal-content {
-        background: var(--white);
+        background: white;
         padding: 3rem;
         border-radius: 25px;
         max-width: 500px;
         width: 90%;
         max-height: 80vh;
         overflow-y: auto;
+        position: relative;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         animation: slideUpModal 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-        position: relative;
     }
-
+    
     @keyframes slideUpModal {
-        from {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
     }
-
+    
     .close-modal {
         position: absolute;
         top: 1.5rem;
         right: 1.5rem;
         font-size: 2rem;
         cursor: pointer;
-        color: var(--secondary);
-        transition: all 0.3s;
-        font-weight: 300;
-        line-height: 1;
         background: none;
         border: none;
+        color: var(--secondary);
+        transition: all 0.3s;
     }
-
+    
     .close-modal:hover {
         color: var(--primary);
         transform: rotate(90deg);
     }
-
-    /* Responsive */
+    
     @media (max-width: 768px) {
-        .menu-toggle {
-            display: block;
-        }
-
+        .menu-toggle { display: block; }
         .nav-links {
             position: absolute;
             top: 100%;
@@ -846,61 +931,28 @@
             display: none;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
-
-        .nav-links.active {
-            display: flex;
-        }
-
-        .hero-title {
-            font-size: 2.5rem;
-        }
-
-        .hero-slogan {
-            font-size: 1.3rem;
-        }
-
-        .hero-date {
-            font-size: 1.1rem;
-        }
-
-        .section-title {
-            font-size: 2.3rem;
-        }
-
-        .kit-price {
-            font-size: 2rem;
-        }
-
-        .hero-icon {
-            font-size: 3.5rem;
-        }
-
-        .cta-button {
-            font-size: 1.1rem;
-            padding: 1rem 2.5rem;
-        }
-
-        .modal-content {
-            padding: 2rem;
-        }
-
-        .gallery-item img {
-            height: 250px;
-        }
-
-        .gallery-showcase h2 {
-            font-size: 2.3rem;
-        }
+        .nav-links.active { display: flex; }
+        .hero-title { font-size: 2.5rem; letter-spacing: 1px; }
+        .hero-logo { width: 100px; height: 100px; margin-bottom: 1.5rem; }
+        .hero-slogan { font-size: 1.2rem; }
+        .countdown-item { padding: 1rem 1.5rem; min-width: 80px; }
+        .countdown-number { font-size: 2rem; }
+        .gallery-item img, .full-gallery-item img { height: 250px; }
+        .noble-cause-text { font-size: 1.2rem; }
+        .footer-logos { gap: 2rem; }
+        .footer-logo-item img { width: 60px; height: 60px; }
     }
 </style>
 
 
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a class="logo" onclick="showHome()">🕌 RCR 2026</a>
+            <a class="logo" onclick="showHome()">
+                <img src="run-logo.png" alt="RCR Logo">
+                <span>RCR</span>
+            </a>
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a onclick="showHome()">Home</a></li>
@@ -914,55 +966,59 @@
     </nav>
 
 
-<!-- Home Section (Hero) -->
 <section id="home" class="hero">
     <div class="hero-content">
-        <div class="hero-icon">🕌</div>
-        <h1 class="hero-title">RAMADHAN<br>CHARITY RUN 2026</h1>
+        <div class="hero-logo">
+            <img src="run-logo.png" alt="Ramadhan Charity Run Logo">
+        </div>
+        <h1 class="hero-title">RAMADHAN<br>CHARITY RUN</h1>
+        <p class="hero-edition">3RD EDITION • 2026</p>
         <p class="hero-slogan">Charity, Fitness & Fun — A Happy Ramadhan for All</p>
-        <p class="hero-date">📅 MARCH 2026 | JOIN US FOR A NOBLE CAUSE</p>
+        <div class="countdown" id="countdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">0</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">0</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">0</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">0</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
         <button class="cta-button" onclick="showSection('kits')">PURCHASE KIT</button>
     </div>
 </section>
 
-<!-- Gallery Showcase Section (On Homepage) -->
 <section id="home-gallery" class="gallery-showcase">
     <h2>Event Highlights</h2>
     <p class="gallery-showcase-subtitle">Moments from our previous charity runs</p>
     <div class="gallery-grid">
         <div class="gallery-item">
-            <img src="community-together.jpg" alt="Charity Run Event">
-            <div class="gallery-overlay">
-                <h3>Community Together</h3>
-                <p>United for a cause</p>
-            </div>
-        </div>
-        <div class="gallery-item">
-            <img src="running-for-hope.jpg" alt="Runners at Event">
+            <img src="running-for-hope.jpg" alt="Running">
             <div class="gallery-overlay">
                 <h3>Running for Hope</h3>
                 <p>Every step counts</p>
             </div>
         </div>
         <div class="gallery-item">
-            <img src="giving-back.jpg" alt="Charity Distribution">
+            <img src="giving-back.jpg" alt="Giving">
             <div class="gallery-overlay">
                 <h3>Giving Back</h3>
                 <p>Feeding 1,000 families</p>
             </div>
         </div>
         <div class="gallery-item">
-            <img src="joy-and-fitness.jpg" alt="Happy Participants">
+            <img src="joy-and-fitness.jpg" alt="Joy">
             <div class="gallery-overlay">
                 <h3>Joy & Fitness</h3>
                 <p>Healthy bodies, happy hearts</p>
-            </div>
-        </div>
-        <div class="gallery-item">
-            <img src="ramadhan-spirit.jpg" alt="Ramadhan Spirit">
-            <div class="gallery-overlay">
-                <h3>Ramadhan Spirit</h3>
-                <p>Blessed month, blessed deeds</p>
             </div>
         </div>
         <div class="gallery-item">
@@ -973,96 +1029,130 @@
             </div>
         </div>
     </div>
+    <div class="view-full-gallery">
+        <button class="view-gallery-btn" onclick="showSection('gallery')">View Full Gallery</button>
+    </div>
 </section>
 
-<!-- Purchase Kit Section -->
 <section id="kits" class="content-section">
     <h2 class="section-title">Purchase Your Kit</h2>
     <p class="section-subtitle">Choose your kit and be part of this amazing journey</p>
     <div class="kit-grid">
         <div class="kit-card">
-            <h3>👨 Adult Kit</h3>
-            <div class="kit-price">UGX 50,000</div>
-            <p class="kit-description">Includes: Premium Running T-shirt, Number Bib, Certificate of Participation, Refreshments & Water</p>
-            <button class="purchase-btn" onclick="openPaymentModal('Adult Kit - UGX 50,000')">Purchase Now</button>
-        </div>
-        <div class="kit-card">
-            <h3>🎓 Student Kit</h3>
-            <div class="kit-price">UGX 30,000</div>
-            <p class="kit-description">Includes: Running T-shirt, Number Bib, Certificate of Participation, Refreshments & Water</p>
-            <button class="purchase-btn" onclick="openPaymentModal('Student Kit - UGX 30,000')">Purchase Now</button>
-        </div>
-        <div class="kit-card">
             <h3>👶 Kids Kit</h3>
-            <div class="kit-price">UGX 20,000</div>
-            <p class="kit-description">Includes: Kids Running T-shirt, Number Bib, Certificate of Participation, Healthy Snacks & Juice</p>
-            <button class="purchase-btn" onclick="openPaymentModal('Kids Kit - UGX 20,000')">Purchase Now</button>
+            <div class="kit-price">UGX 19,000</div>
+            <p class="kit-description">Includes: T-shirt, Medal</p>
+            <button class="purchase-btn" onclick="openPaymentModal('Kids Kit - UGX 19,000')">Purchase Now</button>
         </div>
         <div class="kit-card">
-            <h3>⭐ VIP Kit</h3>
-            <div class="kit-price">UGX 100,000</div>
-            <p class="kit-description">Includes: Premium Designer T-shirt, VIP Access Area, Exclusive Goodie Bag, Certificate, Special Refreshments & More</p>
-            <button class="purchase-btn" onclick="openPaymentModal('VIP Kit - UGX 100,000')">Purchase Now</button>
+            <h3>🥈 Silver Kit</h3>
+            <div class="kit-price">UGX 29,000</div>
+            <p class="kit-description">Includes: Vest, Medal</p>
+            <button class="purchase-btn" onclick="openPaymentModal('Silver Kit - UGX 29,000')">Purchase Now</button>
+        </div>
+        <div class="kit-card">
+            <h3>🥇 Gold Kit</h3>
+            <div class="kit-price">UGX 49,000</div>
+            <p class="kit-description">Includes: Vest, Medal, Bottle, Cap, Bag</p>
+            <button class="purchase-btn" onclick="openPaymentModal('Gold Kit - UGX 49,000')">Purchase Now</button>
+        </div>
+        <div class="kit-card">
+            <h3>💎 Platinum Kit</h3>
+            <div class="kit-price">UGX 89,000</div>
+            <p class="kit-description">Includes: T-shirt, Medal, Bottle, Cap, Bag, Certificate of Appreciation</p>
+            <button class="purchase-btn" onclick="openPaymentModal('Platinum Kit - UGX 89,000')">Purchase Now</button>
         </div>
     </div>
 </section>
 
-<!-- Donate Section -->
 <section id="donate" class="content-section">
     <h2 class="section-title">Make a Donation</h2>
     <p class="section-subtitle">Your generosity helps us feed 1,000 families this Ramadhan</p>
-    <p style="text-align: center; font-size: 1.3rem; max-width: 700px; margin: 0 auto 3rem; color: #555; line-height: 1.8;">Every contribution makes a difference in someone's life. Join us in spreading joy and hope this blessed month.</p>
     <div class="payment-options">
         <div class="payment-card">
-            <h3>📱 MTN Momo Pay</h3>
-            <p class="payment-info">Number: <strong>0772 XXX XXX</strong></p>
-            <p class="payment-info">Name: Ramadhan Charity Run</p>
+            <h3>📱 MTN Mobile Money</h3>
+            <p class="payment-info">Number: <strong>0762301744</strong></p>
+            <p class="payment-info">Name: <strong>Uthman Matovu</strong></p>
         </div>
         <div class="payment-card">
-            <h3>📱 Airtel Pay</h3>
-            <p class="payment-info">Number: <strong>0750 XXX XXX</strong></p>
-            <p class="payment-info">Name: Ramadhan Charity Run</p>
-        </div>
-        <div class="payment-card">
-            <h3>🏦 Bank Transfer</h3>
-            <p class="payment-info">Bank: Stanbic Bank Uganda</p>
-            <p class="payment-info">Account: <strong>XXXXXXXXXX</strong></p>
-            <p class="payment-info">Name: Ramadhan Charity Run</p>
+            <h3>📱 Airtel Money</h3>
+            <p class="payment-info">Number: <strong>0709113129</strong></p>
+            <p class="payment-info">Name: <strong>Uthman Matovu</strong></p>
         </div>
     </div>
-    <p style="text-align: center; margin-top: 2.5rem; font-size: 1.1rem;">After payment, please share proof via <a href="https://wa.me/256XXXXXXXXX?text=Asalaam%20alykum" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: underline;">WhatsApp</a></p>
+    <div class="whatsapp-notice">
+        <p>After payment, please share proof of payment via <a href="https://wa.me/256762301744?text=Asalaam%20alykum.%20I%20have%20made%20a%20donation" target="_blank">WhatsApp: 0762301744</a></p>
+    </div>
 </section>
 
-<!-- About Section -->
 <section id="about" class="content-section">
     <h2 class="section-title">About the Event</h2>
     <p class="section-subtitle">Charity, Fitness & Fun — A Happy Ramadhan for All</p>
     <div class="about-content">
         <div class="about-card">
             <h3>🎯 Vision</h3>
-            <p>To create a sustainable community initiative that combines fitness, charity, and spiritual fulfillment during the blessed month of Ramadhan. We envision a future where everyone has access to basic necessities and the joy of community support.</p>
+            <p>To create a sustainable community initiative that combines fitness, charity, and spiritual fulfillment during the blessed month of Ramadhan.</p>
         </div>
         <div class="about-card">
             <h3>💝 Mission</h3>
-            <p>To bring together communities in support of those in need while promoting health, wellness, and the spirit of giving during Ramadhan. We aim to create lasting impact through collective action and compassion.</p>
+            <p>To bring together communities in support of those in need while promoting health, wellness, and the spirit of giving during Ramadhan.</p>
         </div>
         <div class="about-card">
             <h3>🎯 Impact</h3>
-            <p>Our goal is to feed 1,000 families this Ramadhan. Through your participation and donations, we can make a Happy Ramadhan for All! Together, we're building a stronger, more caring community.</p>
+            <p>Our goal is to feed 1,000 families this Ramadhan. Through your participation and donations, we can make a Happy Ramadhan for All!</p>
         </div>
     </div>
 </section>
 
-<!-- Gallery Section -->
 <section id="gallery" class="content-section">
-    <div class="coming-soon">
-        <h2>📸 Gallery</h2>
-        <p>Coming Soon...</p>
-        <p style="font-size: 1.1rem; color: #666; margin-top: 1.5rem; font-weight: 300;">Photos and moments from the event will be available here soon!</p>
+    <h2 class="section-title">📸 Event Gallery</h2>
+    <p class="section-subtitle">Relive the beautiful moments from our charity runs</p>
+    <div class="full-gallery-grid">
+        <div class="full-gallery-item">
+            <img src="community-together.jpg" alt="Community">
+            <div class="full-gallery-overlay">
+                <h3>Community Together</h3>
+                <p>United for a cause</p>
+            </div>
+        </div>
+        <div class="full-gallery-item">
+            <img src="running-for-hope.jpg" alt="Running">
+            <div class="full-gallery-overlay">
+                <h3>Running for Hope</h3>
+                <p>Every step counts</p>
+            </div>
+        </div>
+        <div class="full-gallery-item">
+            <img src="giving-back.jpg" alt="Giving">
+            <div class="full-gallery-overlay">
+                <h3>Giving Back</h3>
+                <p>Feeding 1,000 families</p>
+            </div>
+        </div>
+        <div class="full-gallery-item">
+            <img src="joy-and-fitness.jpg" alt="Joy">
+            <div class="full-gallery-overlay">
+                <h3>Joy & Fitness</h3>
+                <p>Healthy bodies, happy hearts</p>
+            </div>
+        </div>
+        <div class="full-gallery-item">
+            <img src="ramadhan-spirit.jpg" alt="Spirit">
+            <div class="full-gallery-overlay">
+                <h3>Ramadhan Spirit</h3>
+                <p>Blessed month, blessed deeds</p>
+            </div>
+        </div>
+        <div class="full-gallery-item">
+            <img src="volunteers-in-action.jpg" alt="Volunteers">
+            <div class="full-gallery-overlay">
+                <h3>Volunteers in Action</h3>
+                <p>Making dreams come true</p>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- Contact Section -->
 <section id="contact" class="content-section">
     <h2 class="section-title">Contact Us</h2>
     <p class="section-subtitle">We're here to help. Reach out to us anytime!</p>
@@ -1071,129 +1161,143 @@
             <span class="contact-icon">📱</span>
             <div>
                 <strong style="font-size: 1.2rem; color: var(--primary);">WhatsApp</strong>
-                <p style="margin-top: 0.3rem;">+256 XXX XXX XXX</p>
+                <p>0762301744</p>
             </div>
         </div>
         <div class="contact-item">
             <span class="contact-icon">📧</span>
             <div>
                 <strong style="font-size: 1.2rem; color: var(--primary);">Email</strong>
-                <p style="margin-top: 0.3rem;">info@ramadhancharityrun.org</p>
+                <p>info@ramadhancharityrun.org</p>
             </div>
         </div>
         <div class="contact-item">
             <span class="contact-icon">📍</span>
             <div>
                 <strong style="font-size: 1.2rem; color: var(--primary);">Office Location</strong>
-                <p style="margin-top: 0.3rem;">Kampala, Uganda</p>
+                <p>Kampala, Uganda</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Payment Modal -->
 <div id="paymentModal" class="modal">
     <div class="modal-content">
         <button class="close-modal" onclick="closePaymentModal()">&times;</button>
-        <h2 style="color: var(--primary); margin-bottom: 1rem; font-family: 'Playfair Display', serif; font-size: 2rem; margin-top: 1rem;">Payment Options</h2>
+        <h2 style="color: var(--primary); margin-bottom: 1rem; font-family: 'Playfair Display', serif; font-size: 2rem;">Payment Options</h2>
         <p id="kitInfo" style="margin-bottom: 2rem; font-weight: 600; font-size: 1.1rem; color: var(--yellow);"></p>
         <div class="payment-options">
             <div class="payment-card">
-                <h3>📱 MTN Momo Pay</h3>
-                <p class="payment-info">Number: <strong>0772 XXX XXX</strong></p>
-                <p class="payment-info">Name: Ramadhan Charity Run</p>
+                <h3>📱 MTN Mobile Money</h3>
+                <p class="payment-info">Number: <strong>0762301744</strong></p>
+                <p class="payment-info">Name: <strong>Uthman Matovu</strong></p>
             </div>
             <div class="payment-card">
-                <h3>📱 Airtel Pay</h3>
-                <p class="payment-info">Number: <strong>0750 XXX XXX</strong></p>
-                <p class="payment-info">Name: Ramadhan Charity Run</p>
-            </div>
-            <div class="payment-card">
-                <h3>🏦 Bank Transfer</h3>
-                <p class="payment-info">Bank: Stanbic Bank Uganda</p>
-                <p class="payment-info">Account: <strong>XXXXXXXXXX</strong></p>
-                <p class="payment-info">Name: Ramadhan Charity Run</p>
+                <h3>📱 Airtel Money</h3>
+                <p class="payment-info">Number: <strong>0709113129</strong></p>
+                <p class="payment-info">Name: <strong>Uthman Matovu</strong></p>
             </div>
         </div>
-        <p style="text-align: center; margin-top: 2rem; font-size: 1.05rem;">After payment, please share proof via <a href="https://wa.me/256XXXXXXXXX?text=Asalaam%20alykum" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: underline;">WhatsApp</a></p>
+        <div class="whatsapp-notice">
+            <p>After payment, please share proof of payment via <a href="https://wa.me/256762301744?text=Asalaam%20alykum.%20I%20have%20purchased%20a%20kit" target="_blank">WhatsApp: 0762301744</a></p>
+        </div>
     </div>
 </div>
 
-<!-- WhatsApp Float Button -->
-<a href="https://wa.me/256XXXXXXXXX?text=Asalaam%20alykum" class="whatsapp-float" target="_blank">
-    <span class="whatsapp-text">Talk to us</span>
-    💬
-</a>
+<a href="https://wa.me/256762301744?text=Asalaam%20alykum" class="whatsapp-float" target="_blank">💬</a>
 
-<!-- Footer -->
 <footer>
-    <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">&copy; 2026 Ramadhan Charity Run. All rights reserved.</p>
-    <p style="margin-top: 1rem; font-size: 1rem;">Charity, Fitness & Fun — A Happy Ramadhan for All 🕌</p>
+    <div class="footer-content">
+        <div class="footer-logos">
+            <div class="footer-logo-item">
+                <img src="run-logo.png" alt="Dusman's Daawa Initiative">
+                <p>Dusman's Daawa Initiative</p>
+            </div>
+            <div class="footer-logo-item">
+                <img src="amyu-logo.png" alt="Allied Muslim Youth">
+                <p>Allied Muslim Youth (AMYU)</p>
+            </div>
+        </div>
+        
+        <div class="footer-organizers">
+            <p>Organized by <strong>Dusman's Daawa Initiative</strong></p>
+            <p>In Partnership with <strong>Allied Muslim Youth (AMYU)</strong></p>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ramadhan Charity Run. All rights reserved.</p>
+            <p>Charity, Fitness & Fun — A Happy Ramadhan for All 🕌</p>
+        </div>
+    </div>
 </footer>
 
 <script>
-    // Show home section with gallery
+    function updateCountdown() {
+        const eventDate = new Date('February 8, 2026 00:00:00').getTime();
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours;
+        document.getElementById('minutes').textContent = minutes;
+        document.getElementById('seconds').textContent = seconds;
+
+        if (distance < 0) {
+            document.getElementById('countdown').innerHTML = '<p style="font-size: 2rem; color: var(--yellow);">Event is Live!</p>';
+        }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
     function showHome() {
         document.getElementById('home').style.display = 'flex';
         document.getElementById('home-gallery').style.display = 'block';
-        
         const sections = document.querySelectorAll('.content-section');
-        sections.forEach(section => {
-            section.classList.remove('active');
-        });
-        
+        sections.forEach(section => section.classList.remove('active'));
         closeMenu();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Show specific content section
     function showSection(sectionId) {
         document.getElementById('home').style.display = 'none';
         document.getElementById('home-gallery').style.display = 'none';
-        
         const sections = document.querySelectorAll('.content-section');
-        sections.forEach(section => {
-            section.classList.remove('active');
-        });
-        
+        sections.forEach(section => section.classList.remove('active'));
         const targetSection = document.getElementById(sectionId);
         if (targetSection) {
             targetSection.classList.add('active');
         }
-        
         closeMenu();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Toggle mobile menu
     function toggleMenu() {
-        const navLinks = document.getElementById('navLinks');
-        navLinks.classList.toggle('active');
+        document.getElementById('navLinks').classList.toggle('active');
     }
 
-    // Close mobile menu
     function closeMenu() {
-        const navLinks = document.getElementById('navLinks');
-        navLinks.classList.remove('active');
+        document.getElementById('navLinks').classList.remove('active');
     }
 
-    // Open payment modal
     function openPaymentModal(kitInfo) {
         const modal = document.getElementById('paymentModal');
-        const kitInfoElement = document.getElementById('kitInfo');
-        kitInfoElement.textContent = kitInfo;
+        document.getElementById('kitInfo').textContent = kitInfo;
         modal.classList.add('show');
         document.body.style.overflow = 'hidden';
     }
 
-    // Close payment modal
     function closePaymentModal() {
         const modal = document.getElementById('paymentModal');
         modal.classList.remove('show');
         document.body.style.overflow = 'auto';
     }
 
-    // Close modal when clicking outside
     window.addEventListener('click', function(event) {
         const modal = document.getElementById('paymentModal');
         if (event.target === modal) {
@@ -1201,7 +1305,6 @@
         }
     });
 
-    // Close modal on escape key
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             const modal = document.getElementById('paymentModal');
@@ -1211,7 +1314,6 @@
         }
     });
 
-    // Initialize page
     window.addEventListener('DOMContentLoaded', function() {
         showHome();
     });
@@ -1219,5 +1321,4 @@
 
 
 </body>
-
 </html>
