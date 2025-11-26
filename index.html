@@ -278,6 +278,7 @@
         position: relative;
         overflow: hidden;
         animation: fadeInUp 1.2s ease-out 1.3s backwards;
+        z-index: 1;
     }
     
     .cta-button::before {
@@ -289,6 +290,7 @@
         height: 100%;
         background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
         transition: left 0.5s;
+        z-index: -1;
     }
     
     .cta-button:hover::before { left: 100%; }
@@ -296,6 +298,10 @@
     .cta-button:hover {
         transform: translateY(-5px) scale(1.05);
         box-shadow: 0 15px 40px rgba(249, 202, 37, 0.6);
+    }
+    
+    .cta-button:active {
+        transform: translateY(-3px) scale(1.03);
     }
     
     .gallery-showcase {
@@ -407,11 +413,32 @@
         cursor: pointer;
         border: none;
         transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .view-gallery-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.5s;
+    }
+    
+    .view-gallery-btn:hover::before {
+        left: 100%;
     }
     
     .view-gallery-btn:hover {
-        transform: translateY(-3px);
+        transform: translateY(-3px) scale(1.05);
         box-shadow: 0 10px 30px rgba(29, 79, 162, 0.4);
+    }
+    
+    .view-gallery-btn:active {
+        transform: translateY(-1px) scale(1.02);
     }
     
     section {
@@ -447,6 +474,7 @@
         margin-bottom: 1rem;
         font-weight: 900;
         position: relative;
+        animation: fadeInUp 0.8s ease-out backwards;
     }
     
     .section-title::after {
@@ -467,6 +495,7 @@
         color: #666;
         margin-bottom: 3rem;
         margin-top: 2rem;
+        animation: fadeInUp 0.8s ease-out 0.2s backwards;
     }
     
     .kit-grid {
@@ -485,7 +514,13 @@
         transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
         position: relative;
         overflow: hidden;
+        animation: fadeInUp 0.8s ease-out backwards;
     }
+    
+    .kit-card:nth-child(1) { animation-delay: 0.1s; }
+    .kit-card:nth-child(2) { animation-delay: 0.2s; }
+    .kit-card:nth-child(3) { animation-delay: 0.3s; }
+    .kit-card:nth-child(4) { animation-delay: 0.4s; }
     
     .kit-card::before {
         content: '';
@@ -542,6 +577,7 @@
         transition: all 0.3s;
         position: relative;
         overflow: hidden;
+        z-index: 1;
     }
     
     .purchase-btn::before {
@@ -555,6 +591,7 @@
         border-radius: 50%;
         transform: translate(-50%, -50%);
         transition: width 0.6s, height 0.6s;
+        z-index: -1;
     }
     
     .purchase-btn:hover::before {
@@ -563,8 +600,12 @@
     }
     
     .purchase-btn:hover {
-        transform: translateY(-2px);
+        transform: translateY(-2px) scale(1.02);
         box-shadow: 0 10px 25px rgba(29, 79, 162, 0.3);
+    }
+    
+    .purchase-btn:active {
+        transform: translateY(0) scale(0.98);
     }
     
     .payment-options {
@@ -582,6 +623,15 @@
         border-left: 5px solid var(--primary);
         box-shadow: 0 5px 20px rgba(29, 79, 162, 0.1);
         transition: all 0.3s;
+        animation: fadeInLeft 0.8s ease-out backwards;
+    }
+    
+    .payment-card:nth-child(1) { animation-delay: 0.1s; }
+    .payment-card:nth-child(2) { animation-delay: 0.2s; }
+    
+    @keyframes fadeInLeft {
+        from { opacity: 0; transform: translateX(-30px); }
+        to { opacity: 1; transform: translateX(0); }
     }
     
     .payment-card:hover {
@@ -612,6 +662,7 @@
         background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
         border-radius: 15px;
         border-left: 5px solid #25D366;
+        animation: fadeInUp 0.8s ease-out 0.3s backwards;
     }
     
     .whatsapp-notice p {
@@ -642,7 +693,12 @@
         transition: all 0.4s;
         position: relative;
         overflow: hidden;
+        animation: fadeInUp 0.8s ease-out backwards;
     }
+    
+    .about-card:nth-child(1) { animation-delay: 0.1s; }
+    .about-card:nth-child(2) { animation-delay: 0.2s; }
+    .about-card:nth-child(3) { animation-delay: 0.3s; }
     
     .about-card::before {
         content: '';
@@ -693,6 +749,13 @@
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         animation: fadeInGallery 0.6s ease-out backwards;
     }
+    
+    .full-gallery-item:nth-child(1) { animation-delay: 0.1s; }
+    .full-gallery-item:nth-child(2) { animation-delay: 0.2s; }
+    .full-gallery-item:nth-child(3) { animation-delay: 0.3s; }
+    .full-gallery-item:nth-child(4) { animation-delay: 0.4s; }
+    .full-gallery-item:nth-child(5) { animation-delay: 0.5s; }
+    .full-gallery-item:nth-child(6) { animation-delay: 0.6s; }
     
     .full-gallery-item:hover {
         transform: translateY(-8px);
@@ -745,10 +808,16 @@
         gap: 1.5rem;
         box-shadow: 0 5px 20px rgba(29, 79, 162, 0.1);
         transition: all 0.3s;
+        animation: fadeInUp 0.8s ease-out backwards;
     }
     
+    .contact-item:nth-child(1) { animation-delay: 0.1s; }
+    .contact-item:nth-child(2) { animation-delay: 0.2s; }
+    .contact-item:nth-child(3) { animation-delay: 0.3s; }
+    .contact-item:nth-child(4) { animation-delay: 0.4s; }
+    
     .contact-item:hover {
-        transform: scale(1.03);
+        transform: translateX(10px) scale(1.02);
         box-shadow: 0 10px 30px rgba(29, 79, 162, 0.2);
     }
     
