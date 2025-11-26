@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramadhan Charity Run 2026 | Charity, Fitness & Fun</title>
+    <link rel="icon" type="image/png" href="run-logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-
+```
     :root {
         --primary: #1D4FA2;
         --secondary: #0D3A7A;
@@ -298,8 +299,17 @@
     }
     
     .gallery-showcase {
-        padding: 6rem 2rem;
+        padding: 6rem 0;
         background: linear-gradient(180deg, var(--light) 0%, white 100%);
+        width: 100%;
+    }
+    
+    .gallery-showcase > * {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
     
     .gallery-showcase h2 {
@@ -323,8 +333,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
+        margin-top: 3rem;
     }
     
     .gallery-item {
@@ -383,15 +392,6 @@
     
     .gallery-overlay p { color: var(--yellow); }
     
-    .noble-cause-text {
-        text-align: center;
-        font-size: 1.5rem;
-        color: var(--primary);
-        margin-top: 4rem;
-        font-weight: 600;
-        animation: fadeInUp 1s ease-out;
-    }
-    
     .view-full-gallery {
         text-align: center;
         margin-top: 3rem;
@@ -415,9 +415,16 @@
     }
     
     section {
-        padding: 6rem 2rem;
+        padding: 6rem 0;
+        width: 100%;
+    }
+    
+    section > * {
         max-width: 1200px;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
     
     .content-section { display: none; }
@@ -938,12 +945,11 @@
         .countdown-item { padding: 1rem 1.5rem; min-width: 80px; }
         .countdown-number { font-size: 2rem; }
         .gallery-item img, .full-gallery-item img { height: 250px; }
-        .noble-cause-text { font-size: 1.2rem; }
         .footer-logos { gap: 2rem; }
         .footer-logo-item img { width: 60px; height: 60px; }
     }
 </style>
-
+```
 
 </head>
 <body>
@@ -965,7 +971,7 @@
         </div>
     </nav>
 
-
+```
 <section id="home" class="hero">
     <div class="hero-content">
         <div class="hero-logo">
@@ -1174,6 +1180,13 @@
         <div class="contact-item">
             <span class="contact-icon">📍</span>
             <div>
+                <strong style="font-size: 1.2rem; color: var(--primary);">Event Venue</strong>
+                <p>Kololo Independence Grounds, Kampala</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <span class="contact-icon">🏢</span>
+            <div>
                 <strong style="font-size: 1.2rem; color: var(--primary);">Office Location</strong>
                 <p>Kampala, Uganda</p>
             </div>
@@ -1225,7 +1238,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2026 Ramadhan Charity Run. All rights reserved.</p>
+            <p>&copy; Ramadhan Charity Run. All rights reserved.</p>
             <p>Charity, Fitness & Fun — A Happy Ramadhan for All 🕌</p>
         </div>
     </div>
@@ -1318,7 +1331,7 @@
         showHome();
     });
 </script>
-
+```
 
 </body>
 </html>
