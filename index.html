@@ -677,6 +677,162 @@
         text-decoration: underline;
     }
     
+    .testimonials-section {
+        padding: 6rem 0;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .testimonials-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        opacity: 0.3;
+    }
+    
+    .testimonials-section > * {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .testimonials-section h2 {
+        text-align: center;
+        font-size: 3rem;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 1rem;
+        font-weight: 900;
+        animation: fadeInUp 0.8s ease-out backwards;
+    }
+    
+    .testimonials-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: var(--yellow);
+        margin-bottom: 4rem;
+        font-style: italic;
+        animation: fadeInUp 0.8s ease-out 0.2s backwards;
+    }
+    
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+    }
+    
+    .testimonial-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        position: relative;
+        transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+        animation: fadeInUp 0.8s ease-out backwards;
+        border: 2px solid rgba(249, 202, 37, 0.2);
+    }
+    
+    .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+    .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+    .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+    
+    .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: -20px;
+        left: 30px;
+        font-size: 120px;
+        font-family: 'Playfair Display', serif;
+        color: var(--yellow);
+        opacity: 0.3;
+        line-height: 1;
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        border-color: var(--yellow);
+    }
+    
+    .testimonial-content {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .testimonial-stars {
+        color: var(--yellow);
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        gap: 0.3rem;
+    }
+    
+    .testimonial-text {
+        color: #333;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        font-style: italic;
+    }
+    
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 2px solid var(--light);
+    }
+    
+    .author-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 700;
+        box-shadow: 0 5px 15px rgba(29, 79, 162, 0.3);
+    }
+    
+    .author-info h4 {
+        color: var(--primary);
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.3rem;
+    }
+    
+    .author-info p {
+        color: #666;
+        font-size: 0.9rem;
+    }
+    
+    .testimonial-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, var(--yellow), #F0B800);
+        color: #1A1A1A;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        box-shadow: 0 3px 10px rgba(249, 202, 37, 0.4);
+    }
+    
     .about-content {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1109,6 +1265,81 @@
     </div>
 </section>
 
+<section class="testimonials-section">
+    <h2>What Our Participants Say</h2>
+    <p class="testimonials-subtitle">Inspiring stories from our charity run family</p>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <span class="testimonial-badge">Runner 2025</span>
+            <div class="testimonial-content">
+                <div class="testimonial-stars">
+                    <span>⭐</span>
+                    <span>⭐</span>
+                    <span>⭐</span>
+                    <span>⭐</span>
+                    <span>⭐</span>
+                </div>
+                <p class="testimonial-text">
+                    "This was more than just a run - it was a spiritual journey. Knowing that every step I took helped feed families during Ramadhan made it incredibly meaningful. The organization was flawless and the community spirit was amazing!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AM</div>
+                    <div class="author-info">
+                        <h4>Amina Mohammed</h4>
+                        <p>Gold Kit Participant</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="testimonial-badge">Volunteer 2025</span>
+            <div class="testimonial-content">
+                <div class="testimonial-stars">
+                    <span>⭐</span>
+                    <span>⭐</span>
+                    <span>⭐</span>
+                    <span>⭐</span>
+                    <span>⭐</span>
+                </div>
+                <p class="testimonial-text">
+                    "Being a volunteer at the Ramadhan Charity Run was one of the most rewarding experiences. Seeing families come together for fitness and charity, and knowing we made a real difference - it's beautiful. Can't wait for the next edition!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">IK</div>
+                    <div class="author-info">
+                        <h4>Ibrahim Kasule</h4>
+                        <p>Event Volunteer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <span class="testimonial-badge">Family Runner</span>
+            <div class="testimonial-content">
+                <div class="testimonial-stars">
+                    <span>⭐</span>
+                    <span>⭐</span>
+                    <span>⭐</span>
+                    <span>⭐</span>
+                    <span>⭐</span>
+                </div>
+                <p class="testimonial-text">
+                    "I participated with my entire family, including my kids! The atmosphere was so welcoming and the cause is truly noble. My children learned the value of charity and fitness in the most fun way. Highly recommended!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">FN</div>
+                    <div class="author-info">
+                        <h4>Fatima Nakato</h4>
+                        <p>Family Participant</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="kits" class="content-section">
     <h2 class="section-title">Purchase Your Kit</h2>
     <p class="section-subtitle">Choose your kit and be part of this amazing journey</p>
@@ -1340,6 +1571,7 @@
     function showHome() {
         document.getElementById('home').style.display = 'flex';
         document.getElementById('home-gallery').style.display = 'block';
+        document.querySelector('.testimonials-section').style.display = 'block';
         const sections = document.querySelectorAll('.content-section');
         sections.forEach(section => section.classList.remove('active'));
         closeMenu();
@@ -1349,6 +1581,7 @@
     function showSection(sectionId) {
         document.getElementById('home').style.display = 'none';
         document.getElementById('home-gallery').style.display = 'none';
+        document.querySelector('.testimonials-section').style.display = 'none';
         const sections = document.querySelectorAll('.content-section');
         sections.forEach(section => section.classList.remove('active'));
         const targetSection = document.getElementById(sectionId);
