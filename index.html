@@ -794,20 +794,20 @@
         border-top: 2px solid var(--light);
     }
     
-    .author-avatar {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 1.5rem;
-        font-weight: 700;
-        box-shadow: 0 5px 15px rgba(29, 79, 162, 0.3);
-    }
-    
+ .author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
     .author-info h4 {
         color: var(--primary);
         font-size: 1.1rem;
@@ -832,6 +832,90 @@
         font-weight: 700;
         box-shadow: 0 3px 10px rgba(249, 202, 37, 0.4);
     }
+
+/* Volunteer Page CSS */
+.volunteer-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* soft background for contrast */
+}
+
+.volunteer-card {
+    background-color: #1D4FA2; /* blue card */
+    color: #fff; /* white text */
+    padding: 30px 20px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center; /* center all text */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.volunteer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.volunteer-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volunteer-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.volunteer-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.volunteer-benefits {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.volunteer-benefits li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.volunteer-benefits li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #F9CA25; /* yellow checkmarks */
+    font-weight: bold;
+}
+
+.apply-btn {
+    background-color: #F9CA25; /* yellow button */
+    color: #1D4FA2; /* blue text */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.apply-btn:hover {
+    background-color: #e0b423;
+    transform: scale(1.05);
+}
+
+    
     
     .about-content {
         display: grid;
@@ -1173,8 +1257,253 @@
         .footer-logos { gap: 2rem; }
         .footer-logo-item img { width: 60px; height: 60px; }
     }
-</style>
 
+<!-- ====================== PARTNERS SECTION – FINAL VERSION ====================== -->
+<section id="partners" class="content-section partners-section">
+    <h2 class="section-title">Our Amazing Partners</h2>
+    <p class="section-subtitle">Together, we make a greater impact</p>
+    
+    <div class="partners-intro">
+        <p>We are grateful to our partners who share our vision of creating positive change in our community. Together, we achieve more!</p>
+    </div>
+
+    <!-- Partners Grid -->
+    <div class="partners-grid">
+        <!-- Partner 1 -->
+        <div class="partner-card">
+            <div class="partner-logo">
+                <img src="run-logo.png" alt="Dusman's Daawa Initiative">
+            </div>
+            <h4 class="partner-name">Dusman's Daawa Initiative</h4>
+            <p class="partner-type">Organizing Partner</p>
+        </div>
+
+        <!-- Partner 2 -->
+        <div class="partner-card">
+            <div class="partner-logo">
+                <img src="amyu-logo.png" alt="Allied Muslim Youth">
+            </div>
+            <h4 class="partner-name">Allied Muslim Youth</h4>
+            <p class="partner-type">Co-Organizer</p>
+        </div>
+
+        <!-- Partner 3 -->
+        <div class="partner-card">
+            <div class="partner-logo">
+                <img src="run-logo.png" alt="Community Outreach UG">
+            </div>
+            <h4 class="partner-name">Community Outreach UG</h4>
+            <p class="partner-type">Support Partner</p>
+        </div>
+
+        <!-- Partner 4 -->
+        <div class="partner-card">
+            <div class="partner-logo">
+                <img src="amyu-logo.png" alt="Health & Wellness Hub">
+            </div>
+            <h4 class="partner-name">Health & Wellness Hub</h4>
+            <p class="partner-type">Health Partner</p>
+        </div>
+
+        <!-- Partner 5 -->
+        <div class="partner-card">
+            <div class="partner-logo">
+                <img src="run-logo.png" alt="Uganda Sports Federation">
+            </div>
+            <h4 class="partner-name">Uganda Sports Federation</h4>
+            <p class="partner-type">Sports Partner</p>
+        </div>
+
+        <!-- Partner 6 -->
+        <div class="partner-card">
+            <div class="partner-logo">
+                <img src="amyu-logo.png" alt="Media Partners Network">
+            </div>
+            <h4 class="partner-name">Media Partners Network</h4>
+            <p class="partner-type">Media Partner</p>
+        </div>
+    </div>
+
+    <!-- Become a Partner – Standalone Centered Card -->
+    <div class="become-partner-container">
+        <div class="become-partner-card">
+            <h3>Become a Partner</h3>
+            <p>Join us in making a difference in our community.<br>Let's work together for a noble cause!</p>
+            <button class="partner-btn" onclick="openPartnerModal()">
+                Partner With Us Today
+            </button>
+        </div>
+    </div>
+</section>
+
+/* ==================== PARTNERS SECTION – CLEAN & CENTERED ==================== */
+.partners-section {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.partners-intro p {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    font-size: 1.15rem;
+    color: #444;
+    line-height: 1.8;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+/* Individual Partner Card */
+.partner-card {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 40px 20px;
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(29, 79, 162, 0.25);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.partner-card:nth-child(1) { animation-delay: 0.1s; }
+.partner-card:nth-child(2) { animation-delay: 0.2s; }
+.partner-card:nth-child(3) { animation-delay: 0.3s; }
+.partner-card:nth-child(4) { animation-delay: 0.4s; }
+.partner-card:nth-child(5) { animation-delay: 0.5s; }
+.partner-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.partner-card:hover {
+    transform: translateY(-18px) scale(1.06);
+    box-shadow: 0 30px 60px rgba(29, 79, 162, 0.4), 0 0 30px rgba(249, 202, 37, 0.4);
+}
+
+/* Logo – Perfectly Centered */
+.partner-logo {
+    margin-bottom: 20px;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: white;
+    padding: 12px;
+    border-radius: 50%;
+    border: 5px solid var(--yellow);
+    transition: transform 0.6s ease;
+}
+
+.partner-card:hover .partner-logo img {
+    transform: rotate(360deg) scale(1.15);
+}
+
+/* Text */
+.partner-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--yellow);
+    margin: 12px 0 8px;
+}
+
+.partner-type {
+    font-size: 1rem;
+    opacity: 0.95;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Become a Partner – Standalone & Beautifully Centered */
+.become-partner-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.become-partner-card {
+    background: linear-gradient(135deg, var(--yellow), #f0b800);
+    color: #1a1a1a;
+    max-width: 460px;
+    width: 100%;
+    padding: 60px 40px;
+    border-radius: 28px;
+    box-shadow: 0 25px 60px rgba(249, 202, 37, 0.35);
+    text-align: center;
+    transition: all 0.4s;
+}
+
+.become-partner-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 35px 70px rgba(249, 202, 37, 0.45);
+}
+
+.become-partner-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+
+.become-partner-card p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.partner-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s;
+    box-shadow: 0 10px 25px rgba(29, 79, 162, 0.4);
+}
+
+.partner-btn:hover {
+    background: white;
+    color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(29, 79, 162, 0.5);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .partners-grid {
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .become-partner-card {
+        padding: 50px 25px;
+    }
+    .become-partner-card h3 { font-size: 2rem; }
+}
+</style>
 
 </head>
 <body>
@@ -1269,75 +1598,84 @@
 <section class="testimonials-section">
     <h2>What Our Participants Say</h2>
     <p class="testimonials-subtitle">Inspiring stories from our charity run family</p>
+    
     <div class="testimonials-grid">
+        
+        <!-- TESTIMONIAL 1 -->
         <div class="testimonial-card">
             <span class="testimonial-badge">Runner 2025</span>
             <div class="testimonial-content">
                 <div class="testimonial-stars">
-                    <span>⭐</span>
-                    <span>⭐</span>
-                    <span>⭐</span>
-                    <span>⭐</span>
-                    <span>⭐</span>
+                    <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
                 </div>
+
                 <p class="testimonial-text">
                     "This was more than just a run - it was a spiritual journey. Knowing that every step I took helped feed families during Ramadhan made it incredibly meaningful. The organization was flawless and the community spirit was amazing!"
                 </p>
+
                 <div class="testimonial-author">
-                    <div class="author-avatar">AM</div>
+                    <div class="author-avatar">
+                        <img src="usaama.jpg" alt="Advocate Usaama" class="avatar-img">
+                    </div>
+
                     <div class="author-info">
-                        <h4>Amina Mohammed</h4>
-                        <p>Gold Kit Participant</p>
+                        <h4>Advocate Usaama Ssebuufu</h4>
+                        <p>Chief Runner</p>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- TESTIMONIAL 2 -->
         <div class="testimonial-card">
             <span class="testimonial-badge">Volunteer 2025</span>
             <div class="testimonial-content">
                 <div class="testimonial-stars">
-                    <span>⭐</span>
-                    <span>⭐</span>
-                    <span>⭐</span>
-                    <span>⭐</span>
-                    <span>⭐</span>
+                    <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
                 </div>
+
                 <p class="testimonial-text">
                     "Being a volunteer at the Ramadhan Charity Run was one of the most rewarding experiences. Seeing families come together for fitness and charity, and knowing we made a real difference - it's beautiful. Can't wait for the next edition!"
                 </p>
+
                 <div class="testimonial-author">
-                    <div class="author-avatar">IK</div>
+                    <div class="author-avatar">
+                        <img src="Herman.jpg" alt="Ceo Herman Padel centre" class="avatar-img">
+                    </div>
+
                     <div class="author-info">
-                        <h4>Ibrahim Kasule</h4>
+                        <h4>Ceo Herman Padel centre </h4>
                         <p>Event Volunteer</p>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- TESTIMONIAL 3 -->
         <div class="testimonial-card">
             <span class="testimonial-badge">Family Runner</span>
             <div class="testimonial-content">
                 <div class="testimonial-stars">
-                    <span>⭐</span>
-                    <span>⭐</span>
-                    <span>⭐</span>
-                    <span>⭐</span>
-                    <span>⭐</span>
+                    <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
                 </div>
+
                 <p class="testimonial-text">
                     "I participated with my entire family, including my kids! The atmosphere was so welcoming and the cause is truly noble. My children learned the value of charity and fitness in the most fun way. Highly recommended!"
                 </p>
+
                 <div class="testimonial-author">
-                    <div class="author-avatar">FN</div>
+                    <div class="author-avatar">
+                        <img src="kasim.jpg" alt="Advocate Kasim Muwonge" class="avatar-img">
+                    </div>
+
                     <div class="author-info">
-                        <h4>Fatima Nakato</h4>
+                        <h4>Advocate Kasim Muwonge</h4>
                         <p>Family Participant</p>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 
